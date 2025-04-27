@@ -1,0 +1,107 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &750181130534002113
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8130214486309526857}
+  - component: {fileID: 2878630538748928531}
+  - component: {fileID: 1901127162670165744}
+  - component: {fileID: 27979002359677314}
+  - component: {fileID: 7513873783773885149}
+  m_Layer: 0
+  m_Name: Game Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8130214486309526857
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 750181130534002113}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2878630538748928531
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 750181130534002113}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7bc9e2d51d4eb5a449c964447bb5a581, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  carteDatabase: {fileID: 11400000, guid: 1ee086a1992a0424aa0adc539ce2b4fb, type: 2}
+  cartesDisponibles:
+  - nomCarte: 
+    icone: {fileID: 0}
+    score: 0
+    prefabTuile: {fileID: 0}
+  - nomCarte: 
+    icone: {fileID: 0}
+    score: 0
+    prefabTuile: {fileID: 0}
+  - nomCarte: 
+    icone: {fileID: 0}
+    score: 0
+    prefabTuile: {fileID: 0}
+  mainUI: []
+  pioche: 5
+--- !u!114 &1901127162670165744
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 750181130534002113}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f0d3dc6ec5cc91409273d595365f03c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  boutonCartePrefab: {fileID: 5720663747175729674, guid: 407f76aed8540fe43b30be2b44071e3c, type: 3}
+  conteneurCartes: {fileID: 6466187342209803149, guid: da7057af881236e4e8c22ebdc31519bd, type: 3}
+--- !u!114 &27979002359677314
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 750181130534002113}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a12c90045add0b47b9dd7e78a852a67, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tilemap: {fileID: 0}
+  tileAutorisee: {fileID: 11400000, guid: 54e8b6fa5b707b645a5d04e9a5283521, type: 2}
+  tileInterdite: {fileID: 11400000, guid: 72651e6a34c969a448bfd9f1f11a25ea, type: 2}
+--- !u!114 &7513873783773885149
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 750181130534002113}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5237f90bf235704e9b2327950d48ee2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tilemap: {fileID: 0}
