@@ -34,7 +34,8 @@ public class MainUI : MonoBehaviour
 
             buttonComponent.onClick.AddListener(() => 
             {
-                SelectionManager.Instance.SelectionnerCarte(carte, bouton);
+                if (SelectionManager.Instance.CarteSelectionnee == null)
+                    SelectionManager.Instance.SelectionnerCarte(carte, bouton);
             });
         }
     }

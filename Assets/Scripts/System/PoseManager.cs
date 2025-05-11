@@ -4,18 +4,20 @@ using UnityEngine.Tilemaps;
 public class PoseManager : MonoBehaviour
 {
     public Tilemap tilemap;
+    public TileBase tuileInterdite;
 
     public bool PeutPlacerCarte(Vector3Int positionBase, CarteData carte)
     {
-        if (tilemap.HasTile(positionBase))
-            return false;
+        TileBase currentTile = tilemap.GetTile(positionBase);
+
+        if (currentTile != null && currentTile.name == tuileInterdite.name) return false;
 
         return true;
     }
 
-    public void PlacerCarte(Vector3Int positionBase, CarteData carte)
+    public bool PlacerCarte(Vector3Int positionBase, CarteData carte)
     {
-        if (!PeutPlacerCarte(positionBase, carte)) return;
+        if (!PeutPlacerCarte(positionBase, carte)) return false;
 
         Vector3 worldPos = tilemap.GetCellCenterWorld(positionBase);
         worldPos.z = 0;
@@ -27,8 +29,12 @@ public class PoseManager : MonoBehaviour
         if (sr != null)
         {
             float precisionFactor = 10f;
-            sr.sortingOrder = (int)(100 - positionBase.y * precisionFactor);
+            sr.sortingOrder = (int)(100 - worldPos.y * precisionFactor);
         }
+
+        tilemap.SetTile(positionBase, tuileInterdite);
+
+        return true;
     }
 
     void Update()
@@ -37,12 +43,14 @@ public class PoseManager : MonoBehaviour
         {
             Vector3 mouseWorld = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             Vector3Int cell = tilemap.WorldToCell(mouseWorld);
+            cell.z = 0;
 
             var carte = SelectionManager.Instance.CarteSelectionnee;
 
-            PlacerCarte(cell, carte);
+            bool placed = PlacerCarte(cell, carte);
 
-            SelectionManager.Instance.DeselectionnerCarte();
+            if (placed)
+                SelectionManager.Instance.DeselectionnerCarte();
         }
     }
 }

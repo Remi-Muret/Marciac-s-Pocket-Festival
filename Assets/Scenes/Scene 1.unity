@@ -345,6 +345,10 @@ PrefabInstance:
       propertyPath: tilemap
       value: 
       objectReference: {fileID: 1272406459}
+    - target: {fileID: 7513873783773885149, guid: 2a123d9eddb3d0744aed102cc195a7c9, type: 3}
+      propertyPath: tuileInterdite
+      value: 
+      objectReference: {fileID: 11400000, guid: 72651e6a34c969a448bfd9f1f11a25ea, type: 2}
     - target: {fileID: 8130214486309526857, guid: 2a123d9eddb3d0744aed102cc195a7c9, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 0

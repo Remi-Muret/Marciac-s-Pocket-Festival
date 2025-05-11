@@ -23,5 +23,5 @@ MonoBehaviour:
     prefabTuile: {fileID: 4319196238630237067, guid: 1c565804b4399784a8e7a78e247222f0, type: 3}
   - nomCarte: C
     icone: {fileID: 21300000, guid: 0d4941862b1e9f54d8b034d176e9032d, type: 3}
-    score: 100
+    score: 500
     prefabTuile: {fileID: 4893905023417396980, guid: 7d71a05f1fcd96b4da8b3f36dd4fb69b, type: 3}
