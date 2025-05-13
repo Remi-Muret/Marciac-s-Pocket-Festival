@@ -34,6 +34,27 @@ public class PoseManager : MonoBehaviour
 
         tilemap.SetTile(positionBase, tuileInterdite);
 
+        Vector3Int[] directions = new Vector3Int[]
+        {
+            new Vector3Int(-1,  0, 0),
+            new Vector3Int( 1,  0, 0),
+            new Vector3Int( 0,  1, 0),
+            new Vector3Int( 0, -1, 0),
+            new Vector3Int(-1,  1, 0),
+            new Vector3Int( 1,  1, 0),
+            new Vector3Int(-1, -1, 0),
+            new Vector3Int( 1, -1, 0)
+        };
+
+        foreach (var dir in directions)
+        {
+            Vector3Int adjacentCell = positionBase + dir;
+
+            TileBase existingTile = tilemap.GetTile(adjacentCell);
+            if (existingTile == null || existingTile.name != tuileInterdite.name)
+                tilemap.SetTile(adjacentCell, tuileInterdite);
+        }
+
         return true;
     }
 
