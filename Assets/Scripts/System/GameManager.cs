@@ -5,10 +5,10 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance { get; private set; }
 
-    public CarteDatabase carteDatabase;  
-    public List<CarteData> cartesDisponibles;
-    public List<CarteData> mainUI;
-    public int pioche;
+    public TileDatabase tileDatabase;
+    public List<TileData> handTiles;
+
+    public int draw;
 
     void Awake()
     {
@@ -22,20 +22,20 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-        cartesDisponibles = carteDatabase.GetCarteData();  
-        PiocherCartes(pioche);
+        DrawTile(draw);
     }
 
-    public void PiocherCartes(int nombre)
+    public void DrawTile(int nombre)
     {
-        mainUI.Clear();
+        handTiles.Clear();
+        var allTiles = tileDatabase.GetTileData();
 
         for (int i = 0; i < nombre; i++)
         {
-            var carte = cartesDisponibles[Random.Range(0, cartesDisponibles.Count)];
-            mainUI.Add(carte);
+            var tile = allTiles[Random.Range(0, allTiles.Count)];
+            handTiles.Add(tile);
         }
 
-        MainUI.Instance.AfficherCartes(mainUI);
+        HandUIController.Instance.ShowCards(handTiles);
     }
 }

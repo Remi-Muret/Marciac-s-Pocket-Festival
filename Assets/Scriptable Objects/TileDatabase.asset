@@ -1,0 +1,55 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6a16d7542afcf34ab852e3702e18be3, type: 3}
+  m_Name: TileDatabase
+  m_EditorClassIdentifier: 
+  tileData:
+  - tileName: chaise
+    tileSize: 0
+    icone: {fileID: 21300000, guid: 5a3113b51b2b815428738e4d2c14d210, type: 3}
+    score: 100
+    tilePrefab: {fileID: 4319196238630237067, guid: 1c565804b4399784a8e7a78e247222f0, type: 3}
+  - tileName: distributeur
+    tileSize: 0
+    icone: {fileID: 21300000, guid: 3b953666bf79899468b08e3800537a6e, type: 3}
+    score: 100
+    tilePrefab: {fileID: 4893905023417396980, guid: 7d71a05f1fcd96b4da8b3f36dd4fb69b, type: 3}
+  - tileName: enceinte
+    tileSize: 0
+    icone: {fileID: 21300000, guid: 51c5921cd1e522047ae370da205de3c7, type: 3}
+    score: 100
+    tilePrefab: {fileID: 4079676027387657741, guid: fa99894944ec1394a923c4d3d9e5c1c8, type: 3}
+  - tileName: fontaine
+    tileSize: 0
+    icone: {fileID: 21300000, guid: 3888b1d6c57a1464099d6654260dd911, type: 3}
+    score: 100
+    tilePrefab: {fileID: 4079676027387657741, guid: f692ecef624c5244b8e7563742106f6a, type: 3}
+  - tileName: stand
+    tileSize: 0
+    icone: {fileID: 21300000, guid: e5c8dc3298ff30a489ea605760797432, type: 3}
+    score: 100
+    tilePrefab: {fileID: 4079676027387657741, guid: 63a731d15103fe44d9336c47068d93da, type: 3}
+  - tileName: taureau
+    tileSize: 0
+    icone: {fileID: 21300000, guid: 0dbd783cd98b836458642f052fe4dfe9, type: 3}
+    score: 100
+    tilePrefab: {fileID: 4079676027387657741, guid: be4f49224486cb64f9e02ffcecabe034, type: 3}
+  - tileName: toilettes
+    tileSize: 1
+    icone: {fileID: 21300000, guid: db3d03bec1238634bb245bf352750457, type: 3}
+    score: 100
+    tilePrefab: {fileID: 4079676027387657741, guid: 9d92fb3b29ab1d9478f843dc7a1d0d1c, type: 3}
+  - tileName: tente
+    tileSize: 2
+    icone: {fileID: 21300000, guid: 5d15deed46fe3cc44b59d15b47248066, type: 3}
+    score: 100
+    tilePrefab: {fileID: 4079676027387657741, guid: 82b9490ca078a21458c1b87126103a63, type: 3}

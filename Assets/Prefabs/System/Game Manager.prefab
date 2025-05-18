@@ -47,22 +47,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7bc9e2d51d4eb5a449c964447bb5a581, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  carteDatabase: {fileID: 11400000, guid: 1ee086a1992a0424aa0adc539ce2b4fb, type: 2}
-  cartesDisponibles:
-  - nomCarte: 
-    icone: {fileID: 0}
-    score: 0
-    prefabTuile: {fileID: 0}
-  - nomCarte: 
-    icone: {fileID: 0}
-    score: 0
-    prefabTuile: {fileID: 0}
-  - nomCarte: 
-    icone: {fileID: 0}
-    score: 0
-    prefabTuile: {fileID: 0}
-  mainUI: []
-  pioche: 5
+  tileDatabase: {fileID: 11400000, guid: 1ee086a1992a0424aa0adc539ce2b4fb, type: 2}
+  handTiles: []
+  draw: 12
 --- !u!114 &1901127162670165744
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -75,8 +62,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f0d3dc6ec5cc91409273d595365f03c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  boutonCartePrefab: {fileID: 5720663747175729674, guid: 407f76aed8540fe43b30be2b44071e3c, type: 3}
-  conteneurCartes: {fileID: 6466187342209803149, guid: da7057af881236e4e8c22ebdc31519bd, type: 3}
+  tileButtonPrefab: {fileID: 5720663747175729674, guid: 407f76aed8540fe43b30be2b44071e3c, type: 3}
+  handTilesContainer: {fileID: 0}
 --- !u!114 &27979002359677314
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -90,8 +77,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tilemap: {fileID: 0}
-  tileAutorisee: {fileID: 11400000, guid: 54e8b6fa5b707b645a5d04e9a5283521, type: 2}
-  tileInterdite: {fileID: 11400000, guid: 72651e6a34c969a448bfd9f1f11a25ea, type: 2}
+  spriteRenderer: {fileID: 0}
 --- !u!114 &7513873783773885149
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -105,3 +91,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tilemap: {fileID: 0}
+  forbiddenTile: {fileID: 11400000, guid: 49af4392995cfd7409a3b2d58752f492, type: 2}

@@ -5,18 +5,17 @@ public class SelectionManager : MonoBehaviour
 {
     public static SelectionManager Instance { get; private set; }
 
-    public CarteData CarteSelectionnee { get; private set; }
-    private GameObject apercuTuile;
-    private GameObject boutonAssocie;
-    private SpriteRenderer apercuSpriteRenderer;
-
-    [SerializeField] private Tilemap tilemap;
-    [SerializeField] private TileBase tileAutorisee;
-    [SerializeField] private TileBase tileInterdite;
-
+    public TileData selectedTile { get; private set; }
     public int CalculatedSortingOrder { get; private set; }
+    public Tilemap tilemap;
 
-    private void Awake()
+    [HideInInspector] public SpriteRenderer spriteRenderer;
+
+    private GameObject tilePreview;
+    private GameObject involvedButton;
+
+
+    void Awake()
     {
         if (Instance == null)
             Instance = this;
@@ -26,40 +25,9 @@ public class SelectionManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
-    public void SelectionnerCarte(CarteData carte, GameObject bouton)
+    void Update()
     {
-        CarteSelectionnee = carte;
-    
-        boutonAssocie = bouton;
-        boutonAssocie.SetActive(false);
-
-        if (carte != null)
-        {
-            apercuTuile = Instantiate(carte.prefabTuile);
-            Vector3 startPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            startPos.z = 0;
-            apercuTuile.transform.position = startPos;
-
-            apercuTuile.transform.SetParent(tilemap.transform);
-            apercuSpriteRenderer = apercuTuile.GetComponent<SpriteRenderer>();
-
-            Vector3 mouseWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            mouseWorldPos.z = 0;
-            CalculatedSortingOrder = (int)(100 - mouseWorldPos.y * 10);
-        }
-    }
-
-    public void DeselectionnerCarte()
-    {
-        CarteSelectionnee = null;
-
-        if (apercuTuile != null)
-            Destroy(apercuTuile);
-    }
-
-    private void Update()
-    {
-        if (CarteSelectionnee != null && apercuTuile != null && tilemap != null)
+        if (selectedTile != null && tilePreview != null && tilemap != null)
         {
             Vector3 mouseWorld = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             mouseWorld.z = tilemap.transform.position.z;
@@ -67,20 +35,46 @@ public class SelectionManager : MonoBehaviour
             Vector3Int cellPos = tilemap.WorldToCell(mouseWorld);
             Vector3 cellCenter = tilemap.GetCellCenterWorld(cellPos);
             cellCenter.z = 0;
-            apercuTuile.transform.position = cellCenter;
+            tilePreview.transform.position = cellCenter;
 
-            if (apercuSpriteRenderer != null)
+            if (spriteRenderer != null)
             {
                 float precisionFactor = 10f;
-                apercuSpriteRenderer.sortingOrder = (int)(100 - cellCenter.y * precisionFactor);
+                spriteRenderer.sortingOrder = (int)(100 - cellCenter.y * precisionFactor);
             }
 
             TileBase currentTile = tilemap.GetTile(cellPos);
-
-            if (currentTile == tileInterdite)
-                apercuSpriteRenderer.color = Color.red;
-            else
-                apercuSpriteRenderer.color = Color.white;
         }
+    }
+
+    public void SelectTile(TileData tileData, GameObject button)
+    {
+        selectedTile = tileData;
+    
+        involvedButton = button;
+        involvedButton.SetActive(false);
+
+        if (tileData != null)
+        {
+            tilePreview = Instantiate(tileData.tilePrefab);
+            Vector3 startPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            startPos.z = 0;
+            tilePreview.transform.position = startPos;
+
+            tilePreview.transform.SetParent(tilemap.transform);
+            spriteRenderer = tilePreview.GetComponent<SpriteRenderer>();
+
+            Vector3 mouseWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            mouseWorldPos.z = 0;
+            CalculatedSortingOrder = (int)(100 - mouseWorldPos.y * 10);
+        }
+    }
+
+    public void DeselectTile()
+    {
+        selectedTile = null;
+
+        if (tilePreview != null)
+            Destroy(tilePreview);
     }
 }
