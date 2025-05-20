@@ -3,7 +3,7 @@ using UnityEngine.Tilemaps;
 
 public class SelectionManager : MonoBehaviour
 {
-    public static SelectionManager Instance { get; private set; }
+    public static SelectionManager Instance;
 
     public TileData selectedTile { get; private set; }
     public int CalculatedSortingOrder { get; private set; }
@@ -14,15 +14,9 @@ public class SelectionManager : MonoBehaviour
     private GameObject tilePreview;
     private GameObject involvedButton;
 
-
     void Awake()
     {
-        if (Instance == null)
-            Instance = this;
-        else
-            Destroy(gameObject);
-
-        DontDestroyOnLoad(gameObject);
+        Instance = this;
     }
 
     void Update()

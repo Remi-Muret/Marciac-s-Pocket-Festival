@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 2c88298f4ef80d34e98722f40fa63063
+guid: 6ee363a2c1c743d4ab39d0bc07d7629b
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2499141278328739408
-    second: test_tile_0
+      213: 3891967746177708479
+    second: herbe5_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: test_tile_0
+      name: herbe5_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 512
-        height: 277
+        height: 258
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 056dc4a60cbbea220800000000000000
-      internalID: 2499141278328739408
+      spriteID: fb1333c6b0c030630800000000000000
+      internalID: 3891967746177708479
       vertices: []
       indices: 
       edges: []
@@ -143,7 +143,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      test_tile_0: 2499141278328739408
+      herbe5_0: 3891967746177708479
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

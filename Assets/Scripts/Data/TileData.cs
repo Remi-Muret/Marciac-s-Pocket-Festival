@@ -11,10 +11,14 @@ public class TileData
         OneByOne,
         TwoByTwo,
         ThreeByThree,
+        ThreeByFour,
     }
 
     public TileSize tileSize;
     public Sprite icone;
     public int score;
+    public int minFreq;
+    public int maxFreq;
+    public string description;
     public GameObject tilePrefab;
 }

@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: e5c8dc3298ff30a489ea605760797432
+guid: b29170130ec1aa249ae7fbf1d207d474
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 68574151497438887
-    second: stand_de_nourriture_0
+      213: 3695754843915389610
+    second: herbe3_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -50,13 +50,13 @@ TextureImporter:
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 9
-  spritePivot: {x: 0.5, y: 0.15}
+  spritePivot: {x: 0.5, y: 0.25}
   spritePixelsToUnits: 512
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
-  spriteTessellationDetail: -1
+  spriteTessellationDetail: 0
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
@@ -100,33 +100,41 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: stand_de_nourriture_0
+      name: herbe3_0
       rect:
         serializedVersion: 2
-        x: 11
-        y: 111
-        width: 485
-        height: 558
+        x: 0
+        y: 0
+        width: 512
+        height: 258
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 7a657c4d3df93f000800000000000000
-      internalID: 68574151497438887
+      spriteID: aaa81881375f94330800000000000000
+      internalID: 3695754843915389610
       vertices: []
       indices: 
       edges: []
       weights: []
     outline: []
     customData: 
-    physicsShape: []
+    physicsShape:
+    - - {x: 256, y: -129}
+      - {x: 256, y: -127}
+      - {x: 2, y: 0}
+      - {x: -2, y: 0}
+      - {x: -256, y: -127}
+      - {x: -256, y: -129}
+      - {x: -2, y: -256}
+      - {x: 2, y: -256}
     bones: []
     spriteID: 5e97eb03825dee720800000000000000
-    internalID: 0
+    internalID: 1537655665
     vertices: []
     indices: 
     edges: []
@@ -135,7 +143,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      stand_de_nourriture_0: 68574151497438887
+      herbe3_0: 3695754843915389610
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

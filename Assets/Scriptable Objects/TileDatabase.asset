@@ -13,43 +13,97 @@ MonoBehaviour:
   m_Name: TileDatabase
   m_EditorClassIdentifier: 
   tileData:
-  - tileName: chaise
+  - tileName: "Sc\xE8ne"
+    tileSize: 3
+    icone: {fileID: 21300000, guid: 1bae4d67645694c4196ce98918eb5ad8, type: 3}
+    score: 500
+    minFreq: 1
+    maxFreq: 1
+    description: "Il est pr\xE9f\xE9rable d'en avoir une..."
+    tilePrefab: {fileID: 3944539697340337539, guid: 658ffe74987bfb7489449a009eca455f, type: 3}
+  - tileName: Enceinte
     tileSize: 0
-    icone: {fileID: 21300000, guid: 5a3113b51b2b815428738e4d2c14d210, type: 3}
-    score: 100
-    tilePrefab: {fileID: 4319196238630237067, guid: 1c565804b4399784a8e7a78e247222f0, type: 3}
-  - tileName: distributeur
-    tileSize: 0
-    icone: {fileID: 21300000, guid: 3b953666bf79899468b08e3800537a6e, type: 3}
-    score: 100
-    tilePrefab: {fileID: 4893905023417396980, guid: 7d71a05f1fcd96b4da8b3f36dd4fb69b, type: 3}
-  - tileName: enceinte
-    tileSize: 0
-    icone: {fileID: 21300000, guid: 51c5921cd1e522047ae370da205de3c7, type: 3}
-    score: 100
+    icone: {fileID: 21300000, guid: b25c50ea9598bce4da4c4d8994aac54b, type: 3}
+    score: 50
+    minFreq: 2
+    maxFreq: 4
+    description: "Une incontournable des concerts et festivals ! Pour allier le plaisir
+      des yeux et des oreilles, mieux vaut la coller \xE0 la sc\xE8ne. Mais attention,
+      \xE9vitons de monter le volume l\xE0 o\xF9 les gens ont besoin de repos."
     tilePrefab: {fileID: 4079676027387657741, guid: fa99894944ec1394a923c4d3d9e5c1c8, type: 3}
-  - tileName: fontaine
+  - tileName: Rampe
     tileSize: 0
-    icone: {fileID: 21300000, guid: 3888b1d6c57a1464099d6654260dd911, type: 3}
-    score: 100
-    tilePrefab: {fileID: 4079676027387657741, guid: f692ecef624c5244b8e7563742106f6a, type: 3}
-  - tileName: stand
+    icone: {fileID: 21300000, guid: fadf01ef9c762994f8e501617db00ee9, type: 3}
+    score: 200
+    minFreq: 1
+    maxFreq: 1
+    description: "Permettre aux personnes \xE0 mobilit\xE9s r\xE9duite de mont\xE9e
+      sur sc\xE8ne nous parait naturel, n'est-ce pas ?"
+    tilePrefab: {fileID: 2197408016332716826, guid: 5beeb232ac86778449ee19f3ef24dd97, type: 3}
+  - tileName: Vigil
     tileSize: 0
-    icone: {fileID: 21300000, guid: e5c8dc3298ff30a489ea605760797432, type: 3}
+    icone: {fileID: 21300000, guid: 323b70e0294211d4daae0988b1d7a00b, type: 3}
     score: 100
-    tilePrefab: {fileID: 4079676027387657741, guid: 63a731d15103fe44d9336c47068d93da, type: 3}
-  - tileName: taureau
-    tileSize: 0
-    icone: {fileID: 21300000, guid: 0dbd783cd98b836458642f052fe4dfe9, type: 3}
-    score: 100
+    minFreq: 2
+    maxFreq: 4
+    description: "La s\xE9curit\xE9 est primordiale. Pour anticiper et maitriser
+      les menaces, il faut les disperser au maximum, de pr\xE9f\xE9rence pr\xE8s
+      des points strat\xE9giques."
     tilePrefab: {fileID: 4079676027387657741, guid: be4f49224486cb64f9e02ffcecabe034, type: 3}
-  - tileName: toilettes
+  - tileName: Chaise
+    tileSize: 0
+    icone: {fileID: 21300000, guid: 257b8a78936923d449ed027687925dc8, type: 3}
+    score: 10
+    minFreq: 4
+    maxFreq: 8
+    description: "Plus il y en a, mieux c'est, que ce soit par simple confort ou
+      parce qu'il nous est impossible de rester debout sur une dur\xE9e prolong\xE9e.
+      N'h\xE9sitez pas \xE0 les regrouper pour que les gens puissent sociabiliser."
+    tilePrefab: {fileID: 4319196238630237067, guid: 1c565804b4399784a8e7a78e247222f0, type: 3}
+  - tileName: Fontaine
+    tileSize: 0
+    icone: {fileID: 21300000, guid: a4b2733e2732ec74e80f1836347db539, type: 3}
+    score: 100
+    minFreq: 1
+    maxFreq: 2
+    description: "L'eau est vitale, encore plus que les sodas. Mettez les pr\xE8s
+      des structures o\xF9 les gens sont susceptibles d'en avoir besoin."
+    tilePrefab: {fileID: 4079676027387657741, guid: f692ecef624c5244b8e7563742106f6a, type: 3}
+  - tileName: Distributeur
+    tileSize: 0
+    icone: {fileID: 21300000, guid: 1be165f7a0ab292438a0fa9d7ea1b788, type: 3}
+    score: 50
+    minFreq: 1
+    maxFreq: 3
+    description: "Il est toujours sympa d\u2019avoir acc\xE8s \xE0 une collation
+      rapide et r\xE9confortante. Par contre, les stands \xE0 proximit\xE9 ont tendance
+      \xE0 faire baisser les ventes."
+    tilePrefab: {fileID: 4893905023417396980, guid: 7d71a05f1fcd96b4da8b3f36dd4fb69b, type: 3}
+  - tileName: Stand
     tileSize: 1
-    icone: {fileID: 21300000, guid: db3d03bec1238634bb245bf352750457, type: 3}
+    icone: {fileID: 21300000, guid: ba7071ce52cdb1f498cadf3b59bac83e, type: 3}
     score: 100
+    minFreq: 1
+    maxFreq: 3
+    description: "La nourriture est \xE9videmment pr\xE9sente ! Regroupez les pour
+      cr\xE9er de l'animation."
+    tilePrefab: {fileID: 4079676027387657741, guid: 63a731d15103fe44d9336c47068d93da, type: 3}
+  - tileName: Toilettes
+    tileSize: 1
+    icone: {fileID: 21300000, guid: a521a7204d82af94cb1c7622b409c8ff, type: 3}
+    score: 150
+    minFreq: 1
+    maxFreq: 2
+    description: "On y penses pas mais c'est obligatoire. Veillez simplement \xE0
+      ne pas couper l'app\xE9tit des visiteurs."
     tilePrefab: {fileID: 4079676027387657741, guid: 9d92fb3b29ab1d9478f843dc7a1d0d1c, type: 3}
-  - tileName: tente
+  - tileName: Tente
     tileSize: 2
-    icone: {fileID: 21300000, guid: 5d15deed46fe3cc44b59d15b47248066, type: 3}
-    score: 100
+    icone: {fileID: 21300000, guid: 4414a488ebc206947ba91fdddf48db4b, type: 3}
+    score: 200
+    minFreq: 1
+    maxFreq: 2
+    description: "Ils est important d\u2019avoir un endroit o\xF9 se r\xE9fugier
+      pour se reposer ou lorsque l'ont a \xE9t\xE9 victime d'agression. Avec pourquoi
+      pas un petit snack pour un petit regain d\u2019\xE9n\xE9rgie."
     tilePrefab: {fileID: 4079676027387657741, guid: 82b9490ca078a21458c1b87126103a63, type: 3}

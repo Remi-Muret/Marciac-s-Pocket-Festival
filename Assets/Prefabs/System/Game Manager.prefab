@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 8130214486309526857}
   - component: {fileID: 2878630538748928531}
-  - component: {fileID: 1901127162670165744}
   - component: {fileID: 27979002359677314}
   - component: {fileID: 7513873783773885149}
+  - component: {fileID: 1435604659367078102}
   m_Layer: 0
   m_Name: Game Manager
   m_TagString: Untagged
@@ -49,21 +49,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tileDatabase: {fileID: 11400000, guid: 1ee086a1992a0424aa0adc539ce2b4fb, type: 2}
   handTiles: []
-  draw: 12
---- !u!114 &1901127162670165744
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 750181130534002113}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9f0d3dc6ec5cc91409273d595365f03c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  tileButtonPrefab: {fileID: 5720663747175729674, guid: 407f76aed8540fe43b30be2b44071e3c, type: 3}
-  handTilesContainer: {fileID: 0}
+  draw: 20
 --- !u!114 &27979002359677314
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -91,4 +77,123 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tilemap: {fileID: 0}
-  forbiddenTile: {fileID: 11400000, guid: 49af4392995cfd7409a3b2d58752f492, type: 2}
+  forbiddenTile: {fileID: 11400000, guid: d3f23a733e98e0543aa55520662e0362, type: 2}
+  characterPrefabs:
+  - {fileID: 4079676027387657741, guid: f0fe0e82995e6c248af15e36846e0150, type: 3}
+  - {fileID: 7481672544761375120, guid: e707f6ce10afeec4b901ebc774f8120d, type: 3}
+  - {fileID: 1114626669021741237, guid: 121e50307f1cb9c4883cc0c79396bbea, type: 3}
+  - {fileID: 6336037812230647782, guid: 4b3df474fd9a0384da143a1b5406758b, type: 3}
+  - {fileID: 6352225037009465582, guid: 4c3843a0f0fefd04ebe1601188d50b53, type: 3}
+  - {fileID: 449779537251857280, guid: d22bbe7bec544d5479d5ada9eddd894d, type: 3}
+  spawnCount: 30
+--- !u!114 &1435604659367078102
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 750181130534002113}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe36e097fdfe84f4daf1b23cf91993d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scoreText: {fileID: 0}
+  bonusScoreText: {fileID: 0}
+  synergyRules:
+  - tileName: "Sc\xE8ne"
+    influence: Enceinte
+    bonusScore: 300
+  - tileName: "Sc\xE8ne"
+    influence: Rampe
+    bonusScore: 150
+  - tileName: "Sc\xE8ne"
+    influence: Vigil
+    bonusScore: 150
+  - tileName: "Sc\xE8ne"
+    influence: toilettes
+    bonusScore: -150
+  - tileName: "Sc\xE8ne"
+    influence: Tente
+    bonusScore: -150
+  - tileName: Enceinte
+    influence: "Sc\xE8ne"
+    bonusScore: 200
+  - tileName: Enceinte
+    influence: Enceinte
+    bonusScore: -200
+  - tileName: Enceinte
+    influence: Tente
+    bonusScore: -150
+  - tileName: Rampe
+    influence: "Sc\xE8ne"
+    bonusScore: 150
+  - tileName: Vigil
+    influence: "Sc\xE8ne"
+    bonusScore: 150
+  - tileName: Vigil
+    influence: Tente
+    bonusScore: 150
+  - tileName: Vigil
+    influence: Vigil
+    bonusScore: -150
+  - tileName: Chaise
+    influence: Chaise
+    bonusScore: 50
+  - tileName: Fontaine
+    influence: Toilettes
+    bonusScore: 100
+  - tileName: Distributeur
+    influence: Distributeur
+    bonusScore: 50
+  - tileName: Distributeur
+    influence: Stand
+    bonusScore: -50
+  - tileName: Distributeur
+    influence: Tente
+    bonusScore: 50
+  - tileName: Stand
+    influence: Distributeur
+    bonusScore: -50
+  - tileName: Stand
+    influence: Stand
+    bonusScore: 100
+  - tileName: Stand
+    influence: Toilettes
+    bonusScore: -100
+  - tileName: Stand
+    influence: Tente
+    bonusScore: 50
+  - tileName: Toilettes
+    influence: "Sc\xE8ne"
+    bonusScore: -150
+  - tileName: Toilettes
+    influence: Fontaine
+    bonusScore: 100
+  - tileName: Toilettes
+    influence: Stand
+    bonusScore: -100
+  - tileName: Toilettes
+    influence: Toilettes
+    bonusScore: 50
+  - tileName: Toilettes
+    influence: Tente
+    bonusScore: 100
+  - tileName: Tente
+    influence: "Sc\xE8ne"
+    bonusScore: -150
+  - tileName: Tente
+    influence: Enceinte
+    bonusScore: -150
+  - tileName: Tente
+    influence: Vigil
+    bonusScore: 150
+  - tileName: Tente
+    influence: Toilettes
+    bonusScore: 100
+  - tileName: Tente
+    influence: Distributeur
+    bonusScore: 50
+  - tileName: Tente
+    influence: Stand
+    bonusScore: 50
