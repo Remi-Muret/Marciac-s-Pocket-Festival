@@ -16,7 +16,7 @@ MonoBehaviour:
   - tileName: "Sc\xE8ne"
     tileSize: 3
     icone: {fileID: 21300000, guid: 1bae4d67645694c4196ce98918eb5ad8, type: 3}
-    score: 500
+    score: 100
     minFreq: 1
     maxFreq: 1
     description: "Il est pr\xE9f\xE9rable d'en avoir une..."
@@ -27,20 +27,21 @@ MonoBehaviour:
     score: 50
     minFreq: 2
     maxFreq: 4
-    description: "Une incontournable des concerts et festivals ! Pour allier le plaisir
-      des yeux et des oreilles, mieux vaut la coller \xE0 la sc\xE8ne. Mais attention,
-      \xE9vitons de monter le volume l\xE0 o\xF9 les gens ont besoin de repos."
+    description: "Une incontournable des concerts et festivals ! \n\nPour allier
+      le plaisir des yeux et des oreilles, mieux vaut la coller \xE0 la sc\xE8ne.
+      Mais attention, \xE9vitons de monter le volume l\xE0 o\xF9 les gens ont besoin
+      de repos."
     tilePrefab: {fileID: 4079676027387657741, guid: fa99894944ec1394a923c4d3d9e5c1c8, type: 3}
   - tileName: Rampe
     tileSize: 0
     icone: {fileID: 21300000, guid: fadf01ef9c762994f8e501617db00ee9, type: 3}
-    score: 200
+    score: 50
     minFreq: 1
     maxFreq: 1
-    description: "Permettre aux personnes \xE0 mobilit\xE9s r\xE9duite de mont\xE9e
-      sur sc\xE8ne nous parait naturel, n'est-ce pas ?"
+    description: "Permettre aux personnes \xE0 mobilit\xE9 r\xE9duite de monter sur
+      sc\xE8ne nous parait naturel, n'est-ce pas ?"
     tilePrefab: {fileID: 2197408016332716826, guid: 5beeb232ac86778449ee19f3ef24dd97, type: 3}
-  - tileName: Vigil
+  - tileName: "Agent de s\xE9curit\xE9"
     tileSize: 0
     icone: {fileID: 21300000, guid: 323b70e0294211d4daae0988b1d7a00b, type: 3}
     score: 100
@@ -53,20 +54,20 @@ MonoBehaviour:
   - tileName: Chaise
     tileSize: 0
     icone: {fileID: 21300000, guid: 257b8a78936923d449ed027687925dc8, type: 3}
-    score: 10
+    score: 50
     minFreq: 4
     maxFreq: 8
     description: "Plus il y en a, mieux c'est, que ce soit par simple confort ou
       parce qu'il nous est impossible de rester debout sur une dur\xE9e prolong\xE9e.
-      N'h\xE9sitez pas \xE0 les regrouper pour que les gens puissent sociabiliser."
+      \n\nN'h\xE9sitez pas \xE0 les regrouper pour que les gens puissent sociabiliser."
     tilePrefab: {fileID: 4319196238630237067, guid: 1c565804b4399784a8e7a78e247222f0, type: 3}
   - tileName: Fontaine
     tileSize: 0
     icone: {fileID: 21300000, guid: a4b2733e2732ec74e80f1836347db539, type: 3}
-    score: 100
+    score: 50
     minFreq: 1
     maxFreq: 2
-    description: "L'eau est vitale, encore plus que les sodas. Mettez les pr\xE8s
+    description: "L'eau est vitale, encore plus que les sodas. \n\nMettez les pr\xE8s
       des structures o\xF9 les gens sont susceptibles d'en avoir besoin."
     tilePrefab: {fileID: 4079676027387657741, guid: f692ecef624c5244b8e7563742106f6a, type: 3}
   - tileName: Distributeur
@@ -91,19 +92,19 @@ MonoBehaviour:
   - tileName: Toilettes
     tileSize: 1
     icone: {fileID: 21300000, guid: a521a7204d82af94cb1c7622b409c8ff, type: 3}
-    score: 150
+    score: 100
     minFreq: 1
     maxFreq: 2
-    description: "On y penses pas mais c'est obligatoire. Veillez simplement \xE0
+    description: "On y pense pas mais c'est obligatoire. Veillez simplement \xE0
       ne pas couper l'app\xE9tit des visiteurs."
     tilePrefab: {fileID: 4079676027387657741, guid: 9d92fb3b29ab1d9478f843dc7a1d0d1c, type: 3}
   - tileName: Tente
     tileSize: 2
     icone: {fileID: 21300000, guid: 4414a488ebc206947ba91fdddf48db4b, type: 3}
-    score: 200
+    score: 100
     minFreq: 1
     maxFreq: 2
     description: "Ils est important d\u2019avoir un endroit o\xF9 se r\xE9fugier
-      pour se reposer ou lorsque l'ont a \xE9t\xE9 victime d'agression. Avec pourquoi
-      pas un petit snack pour un petit regain d\u2019\xE9n\xE9rgie."
+      pour se reposer ou lorsqu'on a \xE9t\xE9 victime d'agression. \n\nAvec pourquoi
+      pas un petit snack pour un petit regain d\u2019\xE9nergie..."
     tilePrefab: {fileID: 4079676027387657741, guid: 82b9490ca078a21458c1b87126103a63, type: 3}

@@ -56,6 +56,11 @@ public class ScoreManager : MonoBehaviour
         }
     }
 
+    public int GetFinalScore()
+    {
+        return score;
+    }
+
     Dictionary<string, int> CalculateSynergyBonus(string tileName, Dictionary<string, int> influences)
     {
         Dictionary<string, int> bonusBreakdown = new Dictionary<string, int>();
@@ -83,7 +88,7 @@ public class ScoreManager : MonoBehaviour
         System.Text.StringBuilder sb = new System.Text.StringBuilder();
 
         foreach (var kvp in bonusBreakdown)
-            sb.AppendLine((kvp.Value > 0 ? "+" : "") + kvp.Value + $" ({kvp.Key})");
+            sb.AppendLine((kvp.Value > 0 ? "+" : "") + kvp.Value);
 
         bonusScoreText.text = sb.ToString();
         bonusScoreText.gameObject.SetActive(true);

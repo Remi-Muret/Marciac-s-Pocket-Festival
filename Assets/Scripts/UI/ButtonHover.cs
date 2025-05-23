@@ -3,22 +3,35 @@ using UnityEngine.EventSystems;
 
 public class ButtonHover : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
-    private TileData tileData;
+    [SerializeField] private float scaleMultiplier;
+    [SerializeField] private float animationSpeed;
 
-    public void Init(TileData data)
+    private Vector3 originalScale;
+    private Vector3 targetScale;
+
+    void Start()
     {
-        tileData = data;
+        originalScale = transform.localScale;
+        targetScale = originalScale;
+    }
+
+    void Update()
+    {
+        transform.localScale = Vector3.Lerp(transform.localScale, targetScale, Time.unscaledDeltaTime * animationSpeed);
+    }
+
+    void OnDisable()
+    {
+        targetScale = originalScale;
     }
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-        if (SelectionManager.Instance.selectedTile != null) return;
-
-        TooltipUI.Instance.ShowTooltip(tileData);
+        targetScale = originalScale * scaleMultiplier;
     }
 
     public void OnPointerExit(PointerEventData eventData)
     {
-        TooltipUI.Instance.HideTooltip();
+        targetScale = originalScale;
     }
 }

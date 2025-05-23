@@ -19,6 +19,6 @@ public class TileData
     public int score;
     public int minFreq;
     public int maxFreq;
-    public string description;
+    [TextArea] public string description;
     public GameObject tilePrefab;
 }

@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
 using UnityEngine.Tilemaps;
 
 public class SelectionManager : MonoBehaviour
@@ -33,8 +34,12 @@ public class SelectionManager : MonoBehaviour
 
             if (spriteRenderer != null)
             {
-                float precisionFactor = 10f;
-                spriteRenderer.sortingOrder = (int)(100 - cellCenter.y * precisionFactor);
+                spriteRenderer.sortingOrder = (int)(100 - cellCenter.y * 10);
+
+                if (selectedTile.tileSize == TileData.TileSize.ThreeByFour)
+                    spriteRenderer.sortingOrder -= 1;
+                if (selectedTile.tileSize == TileData.TileSize.TwoByTwo)
+                    spriteRenderer.sortingOrder -= 2;
             }
 
             TileBase currentTile = tilemap.GetTile(cellPos);
@@ -61,6 +66,11 @@ public class SelectionManager : MonoBehaviour
             Vector3 mouseWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             mouseWorldPos.z = 0;
             CalculatedSortingOrder = (int)(100 - mouseWorldPos.y * 10);
+
+            if (tileData.tileSize == TileData.TileSize.ThreeByFour)
+                CalculatedSortingOrder -= 1;
+            if (tileData.tileSize == TileData.TileSize.TwoByTwo)
+                CalculatedSortingOrder -= 2;
         }
     }
 

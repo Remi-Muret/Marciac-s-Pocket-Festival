@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Events;
 
 public class HandUI : MonoBehaviour
 {
@@ -8,10 +9,14 @@ public class HandUI : MonoBehaviour
 
     public GameObject tileButtonPrefab;
     public Transform handTilesContainer;
+    public UnityEvent OnAllButtonsDisabled;
 
     void Awake()
     {
         Instance = this;
+
+        if (OnAllButtonsDisabled == null)
+            OnAllButtonsDisabled = new UnityEvent();
     }
 
     public void ShowCards(List<TileData> playerHand)
@@ -27,7 +32,7 @@ public class HandUI : MonoBehaviour
 
             imageComponent.sprite = tile.icone;
 
-            ButtonHover hover = bouton.GetComponent<ButtonHover>();
+            HandButtonHover hover = bouton.GetComponent<HandButtonHover>();
             hover.Init(tile);
 
             buttonComponent.onClick.AddListener(() => 
@@ -52,6 +57,9 @@ public class HandUI : MonoBehaviour
         }
 
         if (activeButtons == 0)
-            FadeUI.Instance.Fade();
+        {
+            EndGameManager.Instance.TriggerEndGameSequence();
+            OnAllButtonsDisabled?.Invoke();
+        }
     }
 }

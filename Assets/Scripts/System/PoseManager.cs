@@ -12,6 +12,7 @@ public class PoseManager : MonoBehaviour
     public int spawnCount;
 
     private Dictionary<Vector3Int, Dictionary<string, int>> influenceMap = new Dictionary<Vector3Int, Dictionary<string, int>>();
+    private List<GameObject> spawnedCharacters = new List<GameObject>();
 
     void Awake()
     {
@@ -70,7 +71,14 @@ public class PoseManager : MonoBehaviour
 
         SpriteRenderer sr = instance.GetComponent<SpriteRenderer>();
         if (sr != null)
+        {
             sr.sortingOrder = (int)(100 - worldPos.y * 10);
+
+            if (tileData.tileSize == TileData.TileSize.ThreeByFour)
+                sr.sortingOrder -= 1;
+            if (tileData.tileSize == TileData.TileSize.TwoByTwo)
+                sr.sortingOrder -= 2;
+        }
 
         Vector3Int[] directions = GetOccupiedOffsets(tileData.tileSize);
         List<Vector3Int> occupiedCells = new List<Vector3Int>();
@@ -89,6 +97,7 @@ public class PoseManager : MonoBehaviour
         ApplyInfluence(occupiedCells.ToArray(), tileData);
         ScoreManager.Instance.AddScore(tileData, GetInfluencesAt(positionBase, tileData));
         HandUI.Instance.CheckIfAllButtonsDisabled();
+        AudioManager.Instance.PlaySFX("Poof SFX", 1f);
 
         return true;
     }
@@ -96,6 +105,8 @@ public class PoseManager : MonoBehaviour
     public Dictionary<string, int> GetInfluencesAt(Vector3Int positionBase, TileData tileData)
     {
         Dictionary<string, int> combinedInfluences = new Dictionary<string, int>();
+        HashSet<string> countedInfluences = new HashSet<string>();
+
         Vector3Int[] directions = GetOccupiedOffsets(tileData.tileSize);
 
         foreach (var dir in directions)
@@ -105,10 +116,10 @@ public class PoseManager : MonoBehaviour
             {
                 foreach (var kvp in influences)
                 {
-                    if (!combinedInfluences.ContainsKey(kvp.Key))
-                        combinedInfluences[kvp.Key] = 0;
+                    if (countedInfluences.Contains(kvp.Key)) continue;
 
-                    combinedInfluences[kvp.Key] += kvp.Value;
+                    countedInfluences.Add(kvp.Key);
+                    combinedInfluences[kvp.Key] = kvp.Value;
                 }
             }
         }
@@ -120,6 +131,8 @@ public class PoseManager : MonoBehaviour
     {
         List<Vector3Int> validPositions = GetAllValidTilePositions();
         if (validPositions.Count == 0 || characterPrefabs.Count == 0) return;
+
+        spawnedCharacters.Clear();
 
         int spawnsDone = 0;
 
@@ -139,9 +152,15 @@ public class PoseManager : MonoBehaviour
                 sr.sortingOrder = (int)(100 - worldPos.y * 10);
 
             tilemap.SetTile(randomCell, forbiddenTile);
+            spawnedCharacters.Add(instance);
 
             spawnsDone++;
         }
+    }
+
+    public List<GameObject> GetSpawnedCharacters()
+    {
+        return spawnedCharacters;
     }
 
     Vector3Int[] GetOccupiedOffsets(TileData.TileSize size)
@@ -189,9 +208,9 @@ public class PoseManager : MonoBehaviour
                 new Vector3Int(1, 1, 0),
                 new Vector3Int(-1, -1, 0),
                 new Vector3Int(1, -1, 0),
-                new Vector3Int(0, -2, 0),
-                new Vector3Int(1, -2, 0),
-                new Vector3Int(-1, -2, 0),
+                new Vector3Int(-1, 2, 0),
+                new Vector3Int(0, 2, 0),
+                new Vector3Int(1, 2, 0),
                 };
 
             default:
@@ -240,8 +259,8 @@ public class PoseManager : MonoBehaviour
                 radius = 3;
                 break;
 
-            case "Vigil":
-                radius = 3;
+            case "Agent de sécurité":
+                radius = 4;
                 break;
 
             default:

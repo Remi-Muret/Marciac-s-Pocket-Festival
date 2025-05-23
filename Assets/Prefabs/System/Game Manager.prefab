@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 27979002359677314}
   - component: {fileID: 7513873783773885149}
   - component: {fileID: 1435604659367078102}
+  - component: {fileID: 4173109447867136503}
+  - component: {fileID: 6055463410096383000}
   m_Layer: 0
   m_Name: Game Manager
   m_TagString: Untagged
@@ -85,7 +87,7 @@ MonoBehaviour:
   - {fileID: 6336037812230647782, guid: 4b3df474fd9a0384da143a1b5406758b, type: 3}
   - {fileID: 6352225037009465582, guid: 4c3843a0f0fefd04ebe1601188d50b53, type: 3}
   - {fileID: 449779537251857280, guid: d22bbe7bec544d5479d5ada9eddd894d, type: 3}
-  spawnCount: 30
+  spawnCount: 20
 --- !u!114 &1435604659367078102
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -103,22 +105,25 @@ MonoBehaviour:
   synergyRules:
   - tileName: "Sc\xE8ne"
     influence: Enceinte
-    bonusScore: 300
+    bonusScore: 150
   - tileName: "Sc\xE8ne"
     influence: Rampe
+    bonusScore: 100
+  - tileName: "Sc\xE8ne"
+    influence: "Agent de s\xE9curit\xE9"
     bonusScore: 150
   - tileName: "Sc\xE8ne"
-    influence: Vigil
-    bonusScore: 150
+    influence: Chaise
+    bonusScore: 50
   - tileName: "Sc\xE8ne"
-    influence: toilettes
+    influence: Toilettes
     bonusScore: -150
   - tileName: "Sc\xE8ne"
     influence: Tente
     bonusScore: -150
   - tileName: Enceinte
     influence: "Sc\xE8ne"
-    bonusScore: 200
+    bonusScore: 150
   - tileName: Enceinte
     influence: Enceinte
     bonusScore: -200
@@ -127,16 +132,19 @@ MonoBehaviour:
     bonusScore: -150
   - tileName: Rampe
     influence: "Sc\xE8ne"
-    bonusScore: 150
-  - tileName: Vigil
+    bonusScore: 100
+  - tileName: "Agent de s\xE9curit\xE9"
     influence: "Sc\xE8ne"
     bonusScore: 150
-  - tileName: Vigil
+  - tileName: "Agent de s\xE9curit\xE9"
+    influence: "Agent de s\xE9curit\xE9"
+    bonusScore: -200
+  - tileName: "Agent de s\xE9curit\xE9"
     influence: Tente
     bonusScore: 150
-  - tileName: Vigil
-    influence: Vigil
-    bonusScore: -150
+  - tileName: Chaise
+    influence: "Sc\xE8ne"
+    bonusScore: 50
   - tileName: Chaise
     influence: Chaise
     bonusScore: 50
@@ -151,7 +159,7 @@ MonoBehaviour:
     bonusScore: -50
   - tileName: Distributeur
     influence: Tente
-    bonusScore: 50
+    bonusScore: 100
   - tileName: Stand
     influence: Distributeur
     bonusScore: -50
@@ -163,7 +171,7 @@ MonoBehaviour:
     bonusScore: -100
   - tileName: Stand
     influence: Tente
-    bonusScore: 50
+    bonusScore: 100
   - tileName: Toilettes
     influence: "Sc\xE8ne"
     bonusScore: -150
@@ -186,14 +194,59 @@ MonoBehaviour:
     influence: Enceinte
     bonusScore: -150
   - tileName: Tente
-    influence: Vigil
+    influence: "Agent de s\xE9curit\xE9"
     bonusScore: 150
   - tileName: Tente
     influence: Toilettes
     bonusScore: 100
   - tileName: Tente
     influence: Distributeur
-    bonusScore: 50
+    bonusScore: 100
   - tileName: Tente
     influence: Stand
-    bonusScore: 50
+    bonusScore: 100
+--- !u!114 &4173109447867136503
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 750181130534002113}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ea51cf7d8b4e7a409eb53beab1019c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - name: Poof SFX
+    clip: {fileID: 8300000, guid: c9f7d8855cd07fe40849f420630279ce, type: 3}
+    volume: 1
+--- !u!114 &6055463410096383000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 750181130534002113}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db1f1bfc5ee38224e8d0d5c53ba5dfae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fadePanel: {fileID: 0}
+  fadeDuration: 1
+  dialoguePanel: {fileID: 0}
+  dialogueText: {fileID: 0}
+  dialogueMoveDistance: 560
+  dialogueMoveDuration: 1
+  lowScoreThreshold: 2000
+  highScoreThreshold: 3000
+  lowScoreMessage: Tu peux faire mieux...
+  midScoreMessage: Pas mal du tout !
+  highScoreMessage: Excellent ! Bravo !
+  arrow: {fileID: 0}
+  angryTrigger: Angry
+  happyTrigger: Happy
+  lowScoreBubbleRatio: 0.2
+  midScoreBubbleRatio: 0.2
+  highScoreBubbleRatio: 0.5
